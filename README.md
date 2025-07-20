@@ -1,2 +1,2 @@
 ## Live Demo
-https://vercel.com/gerrynurimbagmailcoms-projects/product-card
+https://product-card-three-jet.vercel.app/
