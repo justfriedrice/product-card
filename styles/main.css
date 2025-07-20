@@ -1,0 +1,157 @@
+:root {
+  --primary: #fbbd7b; /* From Huemint */
+  --background: #f4ece5;
+  --text: #151210;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: var(--background);
+  padding: 2rem;
+}
+
+.product-card {
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+}
+
+.product-details {
+  padding: 1rem;
+}
+
+.price {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.add-to-cart {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ======================= */
+/* NOTIFICATION STYLES     */
+/* ======================= */
+
+.notification {
+  /* Positioning */
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Visual Design */
+  background: #4BB543; /* Pleasant green */
+  color: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+  
+  /* Layout */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  
+  /* Initial State */
+  opacity: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Visible State */
+.notification.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* Content Area */
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Checkmark Icon */
+.notification-icon {
+  width: 22px;
+  height: 22px;
+  animation: gentleBounce 0.6s ease;
+}
+
+@keyframes gentleBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+/* ======================= */
+/* ELEGANT CLOSE BUTTON    */
+/* ======================= */
+
+.close-btn {
+  /* Button Shape */
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  
+  /* Visual Style */
+  background: rgba(255,255,255,0.15);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-left: 8px;
+  transition: all 0.2s ease;
+}
+
+/* The "×" symbol - created purely with CSS */
+.close-btn::after {
+  content: "×";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Hover Effects */
+.close-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.1);
+}
+
+.close-btn:active {
+  transform: scale(0.95);
+}
+
+/* ======================= */
+/* MOBILE FRIENDLY         */
+/* ======================= */
+@media (max-width: 600px) {
+  .notification {
+    width: 90%;
+    padding: 12px 16px;
+  }
+  
+  .close-btn {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .close-btn::after {
+    font-size: 18px;
+  }
+}
